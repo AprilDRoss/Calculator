@@ -5,6 +5,7 @@
   width: 460px;
   background-color:lightblue;
   border-radius: 20px 20px 20px 20px;
+
 }
 
 .first-row{
@@ -25,6 +26,7 @@
   color: white;
   font-weight: bold;
   border-top-left-radius: 20px;
+  cursor:pointer;
 }
 
 #window{
@@ -54,6 +56,7 @@ p[class = button] {
   font-size:24px;
   color: white;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .third-row{
@@ -74,6 +77,7 @@ p[class = operator]{
   font-size:24px;
   color: white;
   font-weight: bold;
+  cursor:pointer;
 }
 
 .fourth-row{
@@ -100,6 +104,7 @@ p[class = operator]{
   font-size:24px;
   color: white;
   font-weight: bold;
+  cursor:pointer;
 }
 
 #0 {

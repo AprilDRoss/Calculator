@@ -9,11 +9,6 @@ for (let i = 0; i < buttons.length; i++){
   let btn = buttons;
 }
 
-//change innerHTML text to numbers
-if(buttons.innerHTML === 'text'){
-  parseInt(buttons.innerHTML)
-}
-
 //make window accept operator characters
 document.addEventListener("click", function(q) {
   if(q.target.className === "operator") {
@@ -30,7 +25,7 @@ document.addEventListener("click", function(q) {
 //get the value of each button when clicked
 document.addEventListener("click", function(e) {
   console.log(e);
-  if(e.target.className === "button" || e.target.className === "operator"){
+  if(e.target.className === "button"){
     var textContent = e.target.innerHTML;
     console.log(e.target.innerHTML);
     calc.innerHTML += textContent;
