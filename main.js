@@ -1,36 +1,51 @@
 const clearBtn = document.querySelector(".clearbutton");
-const sevenBtn = document.querySelector(".sevenBtn");
-const eightBtn = document.querySelector(".eightBtn");
-const nineBtn = document.querySelector(".nineBtn");
-const dividerBtn = document.querySelector(".dividerBtn");
-const fourBtn = document.querySelector(".fourBtn");
-const fiveBtn = document.querySelector(".fiveBtn");
-const sixBtn = document.querySelector(".sixBtn");
-const multiplierBtn = document.querySelector(".multiplierBtn");
-const oneBtn = document.querySelector(".oneBtn");
-const twoBtn = document.querySelector(".twoBtn");
-const threeBtn = document.querySelector(".threeBtn");
-const subtractorBtn = document.querySelector(".subtractorBtn");
-const zeroBtn = document.querySelector(".zeroBtn");
-const decimalBtn = document.querySelector(".decimalBtn");
 const equalBtn = document.querySelector(".equalBtn");
-const adderBtn = document.querySelector(".adderBtn");
 
-let buttons = document.getElementsByClassName('calculatorContainer');
+//getting buttons for the loop
+let buttons = document.getElementsByClassName('buttons');
+let calc = document.getElementById('window');
 // //create a for loop to click buttons
-//
 for (let i = 0; i < buttons.length; i++){
   let btn = buttons;
 }
 
-//add eventlisterner
-//btn.addEventListener("click", function(event){
+//change innerHTML text to numbers
+if(buttons.innerHTML === 'text'){
+  parseInt(buttons.innerHTML)
+}
 
-function getButtonTextContent(btn) {
-//var buttons = document.querySelectorAll('.calculatorContainer');
-for (var i=0, l=buttons.length; i<l; i++) {
-var input = buttons[i].innerHTMl;
-var calc = document.querySelector('.window');
-calc.innerHTMl = input.innerHTMl;
-   }
- }
+//make window accept operator characters
+document.addEventListener("click", function(q) {
+  if(q.target.className === "operator") {
+    var operatorCharacters = q.target.innerHTML;
+    calc.innerHTML += operatorCharacters;
+    return calc.innerHTML;
+  }
+  else{
+    event.stopPropagation();
+    return false;
+  }
+});
+
+//get the value of each button when clicked
+document.addEventListener("click", function(e) {
+  console.log(e);
+  if(e.target.className === "button" || e.target.className === "operator"){
+    var textContent = e.target.innerHTML;
+    console.log(e.target.innerHTML);
+    calc.innerHTML += textContent;
+  }
+});
+
+clearBtn.addEventListener('click', function(e){
+  if(e.target.className === "clearbutton"){
+    calc.innerHTML = "";
+  }
+});
+
+document.addEventListener("click", function(a){
+  if(a.target.className === "equalBtn"){
+    let answer = eval(calc.innerHTML);
+    calc.innerHTML = answer;
+  }
+});
